@@ -1,0 +1,132 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+  <header>
+    <div class="banner">
+      <div class="banner-content">
+        <h2 class="cozy">Your Cozy Era</h2>
+        <p class="comfy">
+          Get peak comfy-chic <br /><br /><span class="high">with new winter essentials.</span>
+        </p>
+        <button class="banner-btn">SHOP NOW</button>
+      </div>
+      <img src="{% static 'stylehub/image/fash.jpg' %}" />
+    </div>
+  </header>
+
+  <section>
+    <div class="stylefav">
+      <h2>Style Hub's Favorites</h2><br />
+      <h4><span>Beautifully Functional. Purposefully Designed. Consciously Crafted.</span></h4>
+      <div class="stylehub">
+        <div class="style-container">
+          <div class="card">
+            <img src="{% static 'styleapp/image/lover combo.png' %}" />
+            <h5>The Bomber Jacket|Uniform</h5>
+            <p>price: $148</p>
+          </div>
+
+          <div class="card">
+            <img src="{% static 'styleapp/image/Match.png' %}" />
+            <h5>The Slim 4-Way Stretch Orginic Jean</h5>
+            <p>price: $98</p>
+          </div>
+
+          <div class="card">
+            <img src="{% static 'styleapp/image/combo.png' %}" />
+            <h5>The Essential Organic Crew</h5>
+            <p>price: $30</p>
+          </div>
+
+          <div class="card">
+            <img src="{% static 'styleapp/image/heavy weight image.png' %}" />
+            <h5>The Heavy Weight Dress</h5>
+            <p>price: $199</p>
+          </div>
+
+          <div class="card">
+            <img src="{% static 'styleapp/image/jacket.png' %}" />
+            <h5>Dreem Lover's combo's</h5>
+            <p>price: $299</p>
+          </div>
+
+          <div class="card">
+            <img src="{% static 'styleapp/image/organic.png' %}" />
+            <h5>Look's Like love...</h5>
+            <p>price: $150</p>
+          </div>
+
+          <div class="card">
+            <img src="{% static 'styleapp/image/Orginic Jean.png' %}" />
+            <h5>Men's Style Hub's Special</h5>
+            <p>Price: $300</p>
+          </div>
+
+          <div class="card">
+            <img src="{% static 'styleapp/image/Sleeve Crew.png' %}" />
+            <h5>Six Style Fiting cloths T-Shirts</h5>
+            <p>Price: $399</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mision">
+      <h1>We're on a Mission To Clean Up the Industry</h1>
+      <p>Read about our progress in our latest IMPACT REPORT.</p>
+      <button>START 💞💚</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="shoppic">
+      <div class="shop-category">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+          <div class="category-item">
+            <img src="{% static 'styleapp/image/style/shirt.png' %}" />
+            <p>SHIRTS</p>
+          </div>
+          <div class="category-item">
+            <img src="{% static 'styleapp/image/style/denim.jpg' %}" />
+            <p>DENIM</p>
+          </div>
+          <div class="category-item">
+            <img src="{% static 'styleapp/image/style/tees.jpg' %}" />
+            <p>TEES</p>
+          </div>
+          <div class="category-item">
+            <img src="{% static 'styleapp/image/style/pants.jpg' %}" />
+            <p>PANTS</p>
+          </div>
+          <div class="category-item">
+            <img src="{% static 'styleapp/image/style/Sweaters.jpg' %}" />
+            <p>SWEATERS</p>
+          </div>
+          <div class="category-item">
+            <img src="{% static 'styleapp/image/style/Outerwear.png' %}" />
+            <p>OUTERWEAR</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><br /><br /><br />
+
+  <!-- JS from your HTML -->
+  <script>
+    let userName = ''
+    
+    window.onload = function () {
+      userName = prompt("👋 Welcome to Style Hub's!\nEnter your name:")
+    
+      if (!userName || userName.trim() === '') {
+        userName = 'Guest'
+      }
+    
+      alert('✨ Hello ' + userName + '! Enjoy your shopping 🛍️')
+    }
+  </script>
+{% endblock %}

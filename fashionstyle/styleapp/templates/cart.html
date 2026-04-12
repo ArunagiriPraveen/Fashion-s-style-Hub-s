@@ -1,0 +1,63 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container py-5">
+    <h2 class="text-center my-4" style="color: brown; text-shadow: 2px 4px 8px whitesmoke; font-style: oblique; font-family: 'Times New Roman', Times, serif;">Welcome to your Fashion Style's hub store make your with our fashion store's</h2>
+
+    <div class="row justify-content-center">
+      {% for item in cart_items %}
+        <div class="card mb-3 p-3 shadow-sm" style="max-width: 650px; width:100%;">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              {% if item.product.image %}
+                <img src="{{ item.product.image.url }}" alt="product image" style="width: 90px; height: 90px; object-fit: cover; border-radius: 10px;" />
+              {% else %}
+                <img src="{% static 'stylehub/image/default.png' %}" style="width: 90px; height: 90px;" />
+              {% endif %}
+            </div>
+
+            <h5 class="mb-0 flex-grow-1 ms-3">{{ item.product.name }}</h5>
+
+            <div class="text-end">
+              <p class="mb-1 fw-bold text-danger">₹{{ item.product.price }}</p>
+
+              <p class="mb-1">Qty: {{ item.quantity }}</p>
+
+              <a href="#" class="btn btn-success btn-sm">Proceed to Payment</a>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-center">Your cart is empty</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+{% comment %} {% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+  <h1 style="text-align: center; color: brown; text-shadow: 2px 4px 8px whitesmoke; font-style: oblique; font-family: 'Times New Roman', Times, serif;">Welcome to our cart's start and end the day with your's fashion style's hub store</h1>
+
+  <div class="container">
+    <div class="row">
+      {% for item in cart_items %}
+        <div class="col-md-4">
+          <div class="card">
+            <img src="{{ item.product.image.url }}" class="card-img-top" style="height:200px;" />
+            <div class="card-body">
+              <h5>{{ item.product.name }}</h5>
+              <p>₹{{ item.product.price }}</p>
+              <p>Quantity: {{ item.quantity }}</p>
+              <h2 style="color:chartreuse;">Total: ₹{{ item.product.price }} x {{ item.quantity }}</h2>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <p>No items in cart</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %} {% endcomment %}

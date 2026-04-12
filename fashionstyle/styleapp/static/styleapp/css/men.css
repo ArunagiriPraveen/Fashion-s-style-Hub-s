@@ -1,0 +1,197 @@
+.menu {
+    display: flex;
+    position: static;
+    list-style: none;
+    gap: 15px;
+    margin-right: auto;
+    padding-right: 70px;
+    padding-top: 8px;
+    font-size: large;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.product ul {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: bisque;
+    padding: 20px;
+    color: maroon;
+    text-shadow: 4px 2px 9px;
+}
+
+.product a {
+    color: maroon;
+}
+
+.collection {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+.product a:hover {
+    cursor: pointer;
+    color: darkmagenta;
+}
+
+.heading {
+    text-align: center;
+    font-style: oblique;
+    padding: 15px;
+    color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-display: swap;
+    font-variant: small-caps;
+    text-shadow: 2px 4px 8px;
+}
+
+.mens {
+    margin-top: 40px;
+    padding: 60px;
+    background-color: rgb(89, 128, 130);
+}
+
+.style-container {
+    /* display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; */
+
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    gap: 40px;
+    padding: 20px;
+}
+
+.card {
+    background: rgb(97, 132, 138);
+    width: 100%;
+    /* width: 360px; */
+    /* border: 2px solid; */
+    border-color: rgb(64, 173, 70);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgb(102, 131, 122);
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card h5 {
+    padding: 15px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    text-shadow: 4px 8px 12px;
+    color: aquamarine;
+}
+
+.card i {
+    text-align: center;
+    font-size: large;
+    color: gold;
+}
+
+.card s {
+    color: rgb(203, 20, 20);
+}
+
+.card p {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: bolder;
+    font-weight: bold;
+    color: cyan;
+    padding-top: 5px;
+}
+
+.card b {
+    text-align: center;
+    margin-bottom: 18px;
+    color: rgb(55, 225, 137);
+}
+
+.cart {
+    border-radius: 10%;
+    padding: 5px;
+    align-items: center;
+    width: 130px;
+    height: 50px;
+    margin-left: 30%;
+    margin-bottom: 20px;
+    border: none;
+    background-color: rgb(128, 198, 198);
+    color: brown;
+    font-size: large;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.cart:hover {
+    background-color: aquamarine;
+    box-shadow: 2px 6px 9px greenyellow;
+}
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .icon {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    .collection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .style-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .shipping {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foot {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.center {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: bolder;
+    font-display: swap;
+    color: aquamarine;
+}

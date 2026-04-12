@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Style Hub
+      {% endblock %}
+    </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'styleapp/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styleapp/css/men.css' %}" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <ul class="menu">
+        <li>
+          <a href="{% url 'home' %}">Home</a>
+        </li>
+
+        <li class="about">
+          About<div class="about-content">
+            <p>* We are a fashion brand offering trendy clothes.</p>
+            <p>* High quality products at affordable prices.</p>
+          </div>
+        </li>
+
+        <li class="cont">
+          Contact 👤<div class="contact-content">
+            <p>Number: +91 9344922577</p>
+            <p>Email: preveenboss7322@gmail.com</p>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="logo">Style Hub's</h2>
+
+      <ul class="icon">
+        <li>
+          <a href="{% url 'product' %}">Products</a>
+        </li>
+        <li id="cart-icon" style="cursor:pointer;"><a href="{% url 'cart' %}">cart</a>
+          {% comment %} {% for product in products %}
+            <a href="{% url 'add_to_cart' product.id %}"></a>
+          {% endfor %} 
+        </li> {% endcomment %}
+        <li><a href="{% url 'login' %}"> Login</a></li>
+      </ul>
+    </nav>
+
+    <hr />
+
+    {% block content %}
+
+    {% endblock %}
+
+    <div class="shipping">
+      <div class="freeshipping">
+        <a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="85" fill="currentColor" class="bi bi-truck-front" viewBox="0 0 16 16">
+            <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zM4 2a1 1 0 0 0-1 1v3.9c0 .625.562 1.092 1.17.994C5.075 7.747 6.792 7.5 8 7.5s2.925.247 3.83.394A1.008 1.008 0 0 0 13 6.9V3a1 1 0 0 0-1-1zm0 1h8v3.9q0 .002 0 0l-.002.004-.005.002h-.004C11.088 6.761 9.299 6.5 8 6.5s-3.088.26-3.99.406h-.003l-.005-.002L4 6.9q0 .002 0 0z" />
+            <path d="M1 2.5A2.5 2.5 0 0 1 3.5 0h9A2.5 2.5 0 0 1 15 2.5v9c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.5 2.5 0 0 1-1-2zM3.5 1A1.5 1.5 0 0 0 2 2.5v9A1.5 1.5 0 0 0 3.5 13h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 1z" />
+          </svg>
+        </a><br />
+        <h4>Complimentary Shipping</h4>
+        <p>Enjoy free shipping on U.S. orders over $100.</p>
+      </div>
+
+      <div class="crafted">
+        <a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="85" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z" />
+          </svg>
+        </a><br />
+        <h4>Consciously Crafted</h4>
+        <p>Designed with you and the planet in mind.</p>
+      </div>
+
+      <div class="location">
+        <a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="85" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+          </svg>
+        </a><br />
+        <h4>Come Say Hi</h4>
+        <p>We have stores across the all over State's in INDIA</p>
+      </div>
+    </div><br />
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div class="account">
+        <h2>ACCOUNT</h2>
+        <p>Log In</p>
+        <p>Sign Up</p>
+        <p>Redeem a Gift Card</p>
+      </div>
+
+      <div class="company">
+        <h2>COMPANY</h2>
+        <p>About</p>
+        <p>Environment</p>
+        <p>Factories</p>
+        <p>DEI</p>
+        <p>Carrers</p>
+        <p>International</p>
+        <p>Accessibiliry</p>
+      </div>
+
+      <div class="help">
+        <h2>GET HELP</h2>
+        <p>Help Center</p>
+        <p>Return Policy</p>
+        <p>Shipping Info</p>
+        <p>Bulk Orders</p>
+      </div>
+
+      <div class="contact">
+        <h2>CONTACT</h2>
+        <p>Facebook</p>
+        <p>Instagram</p>
+        <p>X</p>
+        <p>Out Stores</p>
+      </div>
+
+      <div class="mail">
+        <input type="email" id="mail" placeholder="Email Address" /><br /><br />
+      </div>
+    </footer>
+
+    <footer class="bg-dark text-white text-center p-4">
+      <p>&copy; 2026 Style Hub's - All Rights Reserved</p>
+    </footer>
+
+    <script src="{% static 'stylehub/javascript/script.js' %}"></script>
+  </body>
+</html>

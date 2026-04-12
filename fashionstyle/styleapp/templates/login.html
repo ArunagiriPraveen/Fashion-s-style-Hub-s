@@ -1,0 +1,50 @@
+{% load static %}
+
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'styleapp/css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'styleapp/css/style.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'styleapp/css/men.css' %}" /> {% endcomment %}
+  </head>
+  <body>
+    <nav class="navbar" style="border-radius: 15px; width: 97%;">
+      <ul class="menu">
+        <li>
+          <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li style="color: rgb(3, 78, 91); text-shadow: 2px 4px 8px purple; font-size: larger; margin-left: 430px;">Login with Valid Username & Password</li>
+      </ul>
+
+      <h2 class="logo">Style Hub's</h2>
+
+
+      <ul class="icon">
+        <li>
+          <a href="{% url 'product' %}">Products</a>
+        </li>
+        <li id="cart-icon" style="cursor:pointer;">
+          <a href="{% url 'cart' %}">cart</a>
+          {% comment %} {% for product in products %}
+            <a href="{% url 'add_to_cart' product.id %}"></a>
+          {% endfor %}
+        </li> {% endcomment %}
+        <li>
+          <a href="{% url 'login' %}">Login</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header id="login">
+      <form id="form" method="POST">
+        {% csrf_token %}
+        <h1 class="loginform">Login form</h1><br />
+        <label class="mail">E-mail ID :</label>
+        <input type="text" name="username" placeholder="Enter your User Name" class="placeholder" />
+        <br /><br /><br />
+        <label for="password" class="mail">Password :</label>
+        <input type="password" name="password" placeholder="Enter your Password" class="placeholder" /><br /><br />
+        <h2><button class="log">Login</button></h2>
+      </form>
+    </header>
+  </body>
+</html>
