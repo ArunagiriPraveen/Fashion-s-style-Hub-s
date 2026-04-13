@@ -1,4 +1,4 @@
-# Fashion Hub's Style developed by using languages
+# Fashion Hub's Style E-Commerce Website developed by using languages
        * HTML 
        * CSS
        * JAVASCRIPT
